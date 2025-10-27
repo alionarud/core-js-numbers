@@ -205,7 +205,7 @@ function isPrime(n) {
   if (n === 1 || n === 2) {
     answear = true;
   } else {
-    for (let i = 2; i <= Math.sqrt(n); i++) {
+    for (let i = 2; i <= Math.sqrt(n); i += 1) {
       if (n % i === 0) {
         answear = false;
       }
@@ -230,7 +230,7 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  return isNaN(Number.parseFloat(value)) ? def : value;
+  return Number.isNaN(Number.parseFloat(value)) ? def : value;
 }
 
 /**
@@ -282,7 +282,8 @@ function getFibonacciNumber(index) {
  */
 function getSumToN(n) {
   let sum = 0;
-  for (i = 1; i <= n; i++) {
+  let i = 0;
+  for (i = 1; i <= n; i += 1) {
     sum += i;
   }
   return sum;
